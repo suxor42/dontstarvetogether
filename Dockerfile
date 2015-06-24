@@ -13,5 +13,9 @@ RUN /root/steamcmd.sh +login anonymous +force_install_dir /usr/games/dontstarvet
 RUN chown -R games:games /usr/games
 WORKDIR /usr/games/dontstarvetogether/bin
 USER games
-CMD [ "/usr/games/dontstarvetogether/bin/dontstarve_dedicated_server_nullrenderer", "-lan" ]
+RUN mkdir -p /usr/games/.klei/DoNotStarveTogether/
+COPY start.sh /usr/games/dontstarvetogether/bin/
+VOLUME /usr/games/.klei/
+#RUN chmod +x /usr/games/dontstarvetogether/bin/start.sh
+CMD [ "/usr/games/dontstarvetogether/bin/start.sh"]
 EXPOSE 10999/udp
