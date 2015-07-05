@@ -15,7 +15,6 @@ WORKDIR /usr/games/dontstarvetogether/bin
 USER games
 RUN mkdir -p /usr/games/.klei/DoNotStarveTogether/
 COPY start.sh /usr/games/dontstarvetogether/bin/
-VOLUME /usr/games/.klei/
 #RUN chmod +x /usr/games/dontstarvetogether/bin/start.sh
 CMD [ "/usr/games/dontstarvetogether/bin/start.sh"]
 EXPOSE 10999/udp
